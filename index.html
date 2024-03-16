@@ -10,95 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Madimi+One&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css">
   </head>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      font-family: "Domine", serif;
-      font-optical-sizing: auto;
-      font-style: normal;
-      height: 100vh;
-      width: 100vw;
-      background-color: aliceblue;
-      position: relative;
-    }
-
-    .TodoContainer {
-      position: absolute;
-      top: 5rem;
-      left: 50%;
-      background: #fff;
-      transform: translateX(-50%);
-      border-radius: 10px;
-      width: 30%;
-      box-sizing: border-box;
-      padding: 10px 20px;
-    }
-
-    .head h1 {
-      font-size: 2.3rem;
-      opacity: 0.7;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .inputTask input {
-      padding: 7px;
-      margin-right: 5px;
-      width: 70%;
-      border: none;
-      outline: none;
-      border-bottom: 2px solid black;
-    }
-
-    .inputTask input::placeholder {
-      font-size: 15px;
-    }
-
-    .inputTask button {
-      width: 20%;
-      padding: 7px;
-    }
-
-    .task .ul {
-      list-style: none;
-    }
-
-    .task .ul li {
-      height: 40px;
-      box-sizing: border-box;
-      padding: 5px;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    .remove {
-      color: #ccc5c5cf;
-      text-decoration: line-through;
-      cursor: pointer;
-    }
-
-    .add {
-      box-shadow: 3px 3px 5px #262926d0;
-      padding: 7px;
-      box-sizing: border-box;
-      margin: 3px;
-    }
-    .btn{
-      float: right;
-      margin-right: 10px;
-    }
-
-    .red {
-      color: red;
-    }
-  </style>
-
+ 
   <body>
     <div class="TodoContainer">
       <div class="head">
@@ -107,7 +21,6 @@
       <div class="inputTask">
         <input
           type="text"
-          value="hello"
           placeholder="Enter Task Here"
           class="input"
         /><button onclick="Addtask()">Add Task</button>
@@ -116,28 +29,6 @@
         <ul class="ul"></ul>
       </div>
     </div>
-    <script>
-      const inputTask = document.querySelector(".input");
-      const Ul = document.querySelector(".ul");
-      let count = 1;
-      function Addtask() {
-        if (inputTask.value != "") {
-          const newList = document.createElement("li");
-          newList.classList.add("add");
-          newList.innerHTML = count + ". " + inputTask.value;
-          inputTask.value = "";
-          Ul.appendChild(newList);
-          newList.addEventListener("click", () => {
-            newList.classList.toggle("remove");
-          });
-          newList.addEventListener("dbclick", () => {
-            alert("nahi ho raha hai");
-          });
-          count++;
-        } else {
-          alert("please enter task");
-        }
-      }
-    </script>
+   <script src="scripts.js"></script>
   </body>
 </html>
